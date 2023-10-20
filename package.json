@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "config": "^3.3.9",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "mongoose": "^7.6.3"
+  },
+  "name": "issuetracker",
+  "version": "1.0.0",
+  "description": "this is the web project to keep the track of the issues that we get while building the project and help us to resolve them faster",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdarshRai3/IssueTracker.git"
+  },
+  "author": "Adarsh Rai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdarshRai3/IssueTracker/issues"
+  },
+  "homepage": "https://github.com/AdarshRai3/IssueTracker#readme"
+}
