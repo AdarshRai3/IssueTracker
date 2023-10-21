@@ -5,23 +5,37 @@
 }
 nav
 {
-    width:100vw;
+    width:100%;
     height:10%;
     display:flex;
     align-items: center;
     justify-content: space-between;
+    padding-top:0.5rem;
     background-color:white;
-    padding:0.3rem;
+    box-shadow:0px 0px 0px 2px lightblue;
 }
 .nav1
 {
-    padding-left: 0.5rem;
+    padding-left: 1rem;
 }
- button{
-    margin-right:2rem;
+ .nav_button{
     padding:0.5rem;
- }
-
+    background-color:#235fc7;
+    border-radius: 0.5rem;
+    font-family: 'Poppins';
+    font-weight: bolder;
+    margin:2rem;
+}
+.nav_button:hover{
+    background-color:lightblue;
+}
+.nav_button:active{
+    box-shadow: 0.3rem lightblue;
+}
+a{
+   text-decoration: none;
+   color:white;
+}
 i{
     color: #235fc7;
 }
@@ -29,4 +43,79 @@ logo
 {
     font-family: 'Poppins';
     font-weight: bolder;
+}
+
+#project_box
+{
+    height:0px;
+    width:0px;
+    position:fixed;
+    top:0px;
+    left:0px;
+    overflow:hidden;
+}
+
+#project_box:target{
+
+    background-color:white;
+    height:70vh;
+    width:50vw;
+    top:15%;
+    left:20%;
+    justify-content: center;
+    align-items: center;
+    border-radius:2rem;
+    z-index:-100px;
+    box-shadow: 0px 2px 2px 4px lightblue;
+    padding: 1rem 3rem 3rem 4rem;
+}
+#form_heading
+{
+    background-color: white;
+    text-align: center;
+    font-weight: bolder;
+    font-family: 'Poppins';
+    color:#235fc7;
+}
+#project_form
+{
+    background-color: white;
+    font-weight: bold;
+    padding:1rem 1rem 1rem 0.5rem;
+}
+label
+{
+    flex-shrink: 0;
+}
+input
+{
+    padding:0.5rem;
+    margin:0.2rem;
+    border-radius: 0.5rem;
+    border:lightblue;
+    box-shadow: 0px 0px 0px 1px lightblue;
+}
+#project_name{
+    width:100%;
+}
+#project_description
+{
+    width:100%;
+    height:5rem;
+}
+#box
+{
+    background-color: yellow;
+    width:100%;
+}
+.form_button
+{
+    padding:0.5rem;
+    background-color:red;
+    border-radius: 0.5rem;
+    font-family: 'Poppins';
+    font-weight: bolder;
+    color:white;
+    margin-left: 0.5rem;
+    margin-right:0.5rem;
 }
