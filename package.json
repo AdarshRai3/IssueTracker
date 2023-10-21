@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "this is the web project to keep the track of the issues that we get while building the project and help us to resolve them faster",
   "main": "index.js",
+  "type": "module",
   "devDependencies": {},
   "scripts": {
     "start":"nodemon index.js",
