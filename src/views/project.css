@@ -27,10 +27,7 @@ nav
     margin:2rem;
 }
 .nav_button:hover{
-    background-color:lightblue;
-}
-.nav_button:active{
-    box-shadow: 0.3rem lightblue;
+    background-color:rgb(242, 223, 10);
 }
 a{
    text-decoration: none;
@@ -105,17 +102,26 @@ input
 }
 #box
 {
-    background-color: yellow;
+    display:flex;
+    justify-content: space-around;
+    background-color: white;
     width:100%;
 }
 .form_button
 {
     padding:0.5rem;
-    background-color:red;
+    background-color:#043995;
     border-radius: 0.5rem;
     font-family: 'Poppins';
     font-weight: bolder;
     color:white;
     margin-left: 0.5rem;
     margin-right:0.5rem;
+}
+#close:hover
+{
+    background-color: rgb(250, 6, 6);
+}
+#create:hover{
+    background-color:rgb(7, 243, 7) ;
 }
