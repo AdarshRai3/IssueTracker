@@ -1,11 +1,15 @@
 import express from "express";
 import IssueController from "./src/controllers/issue_controller.js";
 import ProjectController from "./src/controllers/project_controller.js";
+import path from 'path'
+
 
 const server = express();
 const issueController= new IssueController;
 const projectController=new ProjectController;
 
+server.set("view engine", "ejs");
+server.set("views",path.join(path.resolve(),'src','views'));
 
 server.use(express.static('src/views'));
 
