@@ -13,6 +13,6 @@ export default class IssueModel{
 
 var issues =[
     new IssueModel(
-
+           
     )
 ]
