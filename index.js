@@ -9,13 +9,18 @@ const server = express();
 const issueController= new IssueController;
 const projectController=new ProjectController;
 
+// parse form data
+server.use(express.urlencoded({extended:true}));
+
+// setup view engine settings
 server.set("view engine", "ejs");
 server.set("views",path.join(path.resolve(),'src','views'));
 
+
 server.use(express.static('src/views'));
 server.use(expressLayouts);
-server.use(express.urlencoded({extended:true}));
 
+// Create an instance of ProductController
 server.get('/',projectController.getProject);
 server.get('/#project',projectController.getnewProject);
 server.get('/issues',issueController.getIssues);

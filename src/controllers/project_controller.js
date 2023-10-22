@@ -11,8 +11,10 @@ export default class ProjectController{
         res.render('new_project');
     }
 
-    postnewProject(req,res){
+    postNewProject(req,res){
+        
+        ProjectModel.add(req.body)
         let projects = ProjectModel.get();
-        res.render('projects',{projects:projects})
+        return res.render('project',{projects:projects})
     }
 }
