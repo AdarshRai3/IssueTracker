@@ -21,21 +21,21 @@ nav
 }
  .nav_button{
     padding:0.5rem;
-    background-color:#235fc7;
+    background-color:#fc0505;
     border-radius: 0.5rem;
     font-family: 'Poppins';
     font-weight: bolder;
     margin:2rem;
 }
 .nav_button:hover{
-    background-color:rgb(167, 5, 208);
+    background-color:rgb(50, 149, 247);
 }
 a{
    text-decoration: none;
    color:white;
 }
 i{
-    color: #235fc7;
+    color: #ff0400;
 }
 logo
 {
@@ -43,7 +43,7 @@ logo
     font-weight: bolder;
 }
 
-#project_box
+#report_box
 {
     height:0px;
     width:0px;
@@ -53,19 +53,19 @@ logo
     overflow:hidden;
 }
 
-#project_box:target{
+#report_box:target{
 
     background-color:white;
-    height:70vh;
-    width:70vw;
+    height:auto;
+    width:40vw;
     top:15%;
-    left:10%;
+    left:25%;
     justify-content: center;
     align-items: center;
     border-radius:2rem;
     z-index:-100px;
     box-shadow: 0px 2px 2px 4px lightblue;
-    padding: 1rem 3rem 3rem 4rem;
+    padding: 1rem;
 }
 #form_heading
 {
@@ -73,9 +73,9 @@ logo
     text-align: center;
     font-weight: bolder;
     font-family: 'Poppins';
-    color:#235fc7;
+    color:#c72323;
 }
-#project_form
+#report_form
 {
     background-color: white;
     font-weight: bold;
@@ -89,14 +89,32 @@ input
     border:5px rgb(0, 128, 170);
     box-shadow: 0px 0px 0px 1px lightblue;
 }
-#project_name{
+#issue_name{
     width:100%;
 }
-#project_desc
+#issue_desc
 {
     width:100%;
     height:5rem;
     overflow-wrap: normal;
+}
+/* issue tag */
+#issue_tag
+{
+   padding:0.3;
+   border-radius:0.5rem;
+   font-weight: 600;
+   font-size:1rem;
+   text-align: center;
+}
+.option
+{
+    padding:0.3;
+    border-radius:0.5rem;
+}
+#dis
+{
+    font-weight: bold;
 }
 #box
 {
@@ -108,7 +126,7 @@ input
 .form_button
 {
     padding:0.5rem;
-    background-color:#043995;
+    background-color:#146cf9;
     border-radius: 0.5rem;
     font-family: 'Poppins';
     font-weight: 600;
@@ -118,8 +136,8 @@ input
 }
 #close:hover
 {
-    background-color: rgb(247, 8, 8);
+    background-color: rgb(244, 8, 8);
 }
 #create:hover{
-    background-color:rgb(0, 128, 0) ;
+    background-color:rgb(2, 137, 11) ;
 }
