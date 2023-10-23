@@ -21,14 +21,14 @@ nav
 }
  .nav_button{
     padding:0.5rem;
-    background-color:#235fc7;
+    background-color:#1260e7;
     border-radius: 0.5rem;
     font-family: 'Poppins';
     font-weight: bolder;
     margin:2rem;
 }
 .nav_button:hover{
-    background-color:rgb(167, 5, 208);
+    background-color:rgb(91, 0, 238);
 }
 a{
    text-decoration: none;
@@ -108,7 +108,7 @@ input
 .form_button
 {
     padding:0.5rem;
-    background-color:#043995;
+    background-color:#1365f2;
     border-radius: 0.5rem;
     font-family: 'Poppins';
     font-weight: 600;
