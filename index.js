@@ -1,13 +1,13 @@
 import express, { urlencoded } from "express";
-import IssueController from "./src/controllers/issue_controller.js";
 import ProjectController from "./src/controllers/project_controller.js";
+import IssuesController from "./src/controllers/issues_controller.js";
 import path from 'path'
 import expressLayouts from "express-ejs-layouts";
 
 
 const server = express();
-const issueController= new IssueController;
 const projectController=new ProjectController;
+const issuesController= new IssuesController;
 
 // parse form data
 server.use(express.urlencoded({extended:true}));
@@ -22,9 +22,12 @@ server.use(expressLayouts);
 
 // Create an instance of ProductController
 server.get('/',projectController.getProject);
-server.get('/#project',projectController.getnewProject);
-server.get('/issues',issueController.getIssues);
-server.post('/',projectController.getnewProject);
+server.get('/#project',projectController.getAddProject);
+server.post('/',projectController.postNewProject);
+
+server.get('/issues',issuesController.getIssues);
+server.get('/issues/#issues',issuesController.getAddIssues);
+server.post('/issues',issuesController.postNewIssue);
 
 server.get('/', (req,res)=>{
     return res.send('Server is up and running');

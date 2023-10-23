@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+.cover
+{
+    height:auto;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+}
+.card
+{
+    background-color:white;
+    display:flex;
+    flex-direction: column;
+    height:auto;
+    width:75vw;
+    justify-content: center;
+    border-radius:2rem;
+    z-index:-100px;
+    box-shadow: 0px 2px 2px 4px lightblue;
+    padding: 1rem ;
+    margin:1rem 0rem 0rem 1rem
+}
+.infobox
+{
+    padding:0.2rem;
+    margin:0.2rem;
+    height:auto;
+    font-family: 'Poppins', serif;
+    font-weight:bold;
+    display:flex;
+    justify-content: space-between;
+}
+.infobox_button
+{
+    padding:0.5rem;
+    background-color:#043995;
+    border-radius: 0.5rem;
+    font-family: 'Poppins';
+    font-weight: bolder;
+    color:white;
+    margin-left: 0.5rem;
+    margin-right:0.5rem;
+    font-weight: 600;
+}
+#delete_project:hover
+{
+  background-color: red;
+}
+#track_issues:hover
+{
+ background-color: green;
+}
+a{
+    text-decoration: none;
+    color:white;
+}
