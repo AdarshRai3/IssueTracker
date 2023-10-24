@@ -1,7 +1,7 @@
 import express, { urlencoded } from "express";
 import ProjectController from "./src/controllers/project_controller.js";
 import IssuesController from "./src/controllers/issues_controller.js";
-import path from 'path'
+import path from "path";
 import expressLayouts from "express-ejs-layouts";
 
 
@@ -20,7 +20,7 @@ server.set("views",path.join(path.resolve(),'src','views'));
 server.use(express.static('src/views'));
 server.use(expressLayouts);
 
-// Create an instance of ProductController
+// Create instance of ProductController
 server.get('/',projectController.getProject);
 server.get('/#project',projectController.getAddProject);
 server.post('/',projectController.postNewProject);

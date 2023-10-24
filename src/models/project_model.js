@@ -9,13 +9,13 @@ export default class ProjectModel{
     static get(){
         return projects;
     }
-    static add(projectObj){
+    static add(projectsObj){
         let newProject= new ProjectModel(
           projects.length+1,  
-          projectObj.name,
-          projectObj.desc,
-          projectObj.author,
-          projectObj.date
+          projectsObj.name,
+          projectsObj.desc,
+          projectsObj.author,
+          projectsObj.date
         )
         projects.push(newProject)
 
