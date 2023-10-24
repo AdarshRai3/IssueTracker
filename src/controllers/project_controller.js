@@ -8,11 +8,15 @@ class ProjectController{
 
 
     getAddProject(req,res,next){
-        return res.render('new_project');
+        return res.render('newproject',{
+            errorMessage: null,
+        });
     }
 
     postNewProject(req,res,next){
+        
         console.log(req.body);
+        ProjectModel.add(req.body)
         let projects = ProjectModel.get();
         return res.render('project',{projects:projects})
     }

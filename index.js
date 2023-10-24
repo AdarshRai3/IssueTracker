@@ -3,7 +3,7 @@ import ProjectController from "./src/controllers/project_controller.js";
 import IssuesController from "./src/controllers/issues_controller.js";
 import path from "path";
 import expressLayouts from "express-ejs-layouts";
-
+import ValidationMiddleware from "./src/middlewares/validation_middleware.js"
 
 const server = express();
 const projectController=new ProjectController;
@@ -23,7 +23,7 @@ server.use(expressLayouts);
 // Create instance of ProductController
 server.get('/',projectController.getProject);
 server.get('/#project',projectController.getAddProject);
-server.post('/',projectController.postNewProject);
+server.post('/',ValidationMiddleware,projectController.postNewProject);
 
 server.get('/issues',issuesController.getIssues);
 server.get('/issues/#issues',issuesController.getAddIssues);
