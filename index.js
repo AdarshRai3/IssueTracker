@@ -1,37 +1,41 @@
-import express, { urlencoded } from "express";
-import ProjectController from "./src/controllers/project_controller.js";
-import IssuesController from "./src/controllers/issues_controller.js";
-import path from "path";
-import expressLayouts from "express-ejs-layouts";
-import ValidationMiddleware from "./src/middlewares/validation_middleware.js"
+import express from 'express';
+import ProjectController from './src/controllers/project_controller.js';
+import path from 'path';
+import expressLayouts from 'express-ejs-layouts';
+import validationMiddleware from './src/middlewares/validation_middleware.js';
 
 const server = express();
-const projectController=new ProjectController;
-const issuesController= new IssuesController;
+const projectController = new ProjectController;
 
+server.use(expressLayouts);
+server.use(express.json());
+server.use(express.static('src/views'));
 // parse form data
 server.use(express.urlencoded({extended:true}));
 
+
 // setup view engine settings
 server.set("view engine", "ejs");
-server.set("views",path.join(path.resolve(),'src','views'));
+server.set("views",
+path.join(path.resolve(),'src','views')
+);
 
-
-server.use(express.static('src/views'));
-server.use(expressLayouts);
 
 // Create instance of ProductController
 server.get('/',projectController.getProject);
-server.get('/#project',projectController.getAddProject);
-server.post('/',ValidationMiddleware,projectController.postNewProject);
-
-server.get('/issues',issuesController.getIssues);
-server.get('/issues/#issues',issuesController.getAddIssues);
-server.post('/issues',issuesController.postNewIssue);
-
-server.get('/', (req,res)=>{
-    return res.send('Server is up and running');
-})
+server.get(
+    '/create-project',
+    projectController.getAddProject
+);
+server.get(
+    '/update-project/:id',
+    projectController.getUpdateProjectView
+);
+server.post(
+    '/',
+    validationMiddleware,
+    projectController.postNewProject
+);
 
 server.listen (3000, (req,res)=>{
     console.log('Express Server is Up and Running');

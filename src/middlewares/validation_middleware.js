@@ -1,11 +1,20 @@
-import { body, validationResult} from 'express-validator';
-const validateRequest=async (req,res,next)=>{
+import { 
+  body, 
+  validationResult,
+} from 'express-validator';
+
+const validateRequest=async (
+  req,
+  res,
+  next
+  ) => {
 //  validate data
 // 1.Step up rules for validation
-    const rules =[
+ console.log(req.body);
+  const rules =[
         body('name')
           .notEmpty()
-          .withMessage("Name is required"),
+          .withMessage("Name is required"), 
         body('desc')
           .notEmpty()
           .withMessage("Description is required"),
@@ -15,7 +24,7 @@ const validateRequest=async (req,res,next)=>{
         body('date')
           .isDate()
           .withMessage("Date is required")
-    ];
+  ];
 //run all those rules 
     await Promise.all(
       rules.map((rule)=>rule.run(req))

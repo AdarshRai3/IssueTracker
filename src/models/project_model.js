@@ -6,9 +6,10 @@ export default class ProjectModel{
        this.author = author;
        this.date = date;
     }
-    static get(){
+    static getAll(){
         return projects;
     }
+    
     static add(projectsObj){
         let newProject= new ProjectModel(
           projects.length+1,  
@@ -19,6 +20,17 @@ export default class ProjectModel{
         )
         projects.push(newProject)
 
+    }
+
+    static update(projectsObj) { 
+        const index = projects.findIndex(
+            (p) => p.id == projectsObj.id
+          );
+          projects[index] = projectsObj;
+    }
+
+    static getById(id){
+       return projects.find((p) => p.id == id);
     }
 }
 
