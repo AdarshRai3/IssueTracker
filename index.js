@@ -18,3 +18,4 @@ app.use(express.static('src/views'));
 app.get('/', projectController.getProject);
 
 app.listen(9000);
+console.log("app is running on port 9000");
