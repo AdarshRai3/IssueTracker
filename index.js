@@ -1,5 +1,6 @@
 import express from 'express';
-import ProjectController from './src/controllers/project.controller';
+import ProjectController from './src/controllers/project.controller.js';
+import path from 'path'
 
 const app = express();
 

@@ -7,7 +7,7 @@ export default class ProjectModel {
     this.date=date
   }
 
-  get(){
+ static get(){
      return projects;
   }
 }
