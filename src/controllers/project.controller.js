@@ -6,6 +6,6 @@ export default class ProjectController{
         let projects = ProjectModel.get()
         console.log(projects)
         // view engine will send us here and from here we control the specic page we want to render from views folder
-        res.render("project", {projects:projects})
+        res.render("projects", {projects:projects})
     }
 }
