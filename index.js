@@ -1,4 +1,5 @@
 import express from 'express';
+import expressEjsLayouts from 'express-ejs-layouts';
 import ProjectController from './src/controllers/project.controller.js';
 import path from 'path'
 
@@ -13,6 +14,7 @@ const projectController = new ProjectController();
 
 
 app.use(express.static('src/views'));
+app.use(expressEjsLayouts);
 
 app.get('/', projectController.getProjects);
 
