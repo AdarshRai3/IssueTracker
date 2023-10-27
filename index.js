@@ -12,10 +12,9 @@ app.set("views",path.join(path.resolve(),'src','views'));
 const projectController = new ProjectController();
 
 
-
 app.use(express.static('src/views'));
 
-app.get('/', projectController.getProject);
+app.get('/', projectController.getProjects);
 
 app.listen(9000);
 console.log("app is running on port 9000");

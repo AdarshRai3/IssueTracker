@@ -8,7 +8,7 @@ export default class ProjectModel {
   }
 
  static get(){
-     return projects;
+    return projects;
   }
 }
 
