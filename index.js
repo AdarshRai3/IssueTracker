@@ -18,13 +18,37 @@ app.use(express.static('src/views'));
 app.use(expressEjsLayouts);
 
 // this will add the existing project in the list
-app.get('/', projectController.getProjects);
+app.get('/', 
+projectController.getProjects
+);
 // this will give you to the form to add project
-app.get('/new',projectController.getAddForm);
-//this will post the project submitted in that form
+
+app.get('/new',
+projectController.getAddForm
+);
+
+// this will post the new project
 app.post('/',
 // adding validation middleware before the controller function
 validationMiddleware, 
-projectController.addNewProject);
-app.listen(9000);
-console.log("app is running on port 9000");
+projectController.addNewProject
+);
+
+
+//this will fetch the project submitted in that form
+app.get('/update-project/:id',
+projectController.getUpdateProjectView
+);
+
+
+
+//this will post the project
+app.post(
+    '/update-project/',
+    projectController.postUpdateProject
+);
+
+app.get('/delete-project/:id', projectController.deleteProject);
+app.listen(9000, () => {
+    console.log('Server is running on port 9000');
+});

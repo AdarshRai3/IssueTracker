@@ -1,0 +1,29 @@
+<!-- views/add-product.ejs -->
+
+<h1 class="mt-5 mb-4">Update the Project</h1>
+<!-- this form is submitting on / url and the method of the form is post -->
+<form action="/update-project" method="post">
+   <% if(errorMessage){%>
+    <div class="alert alert-danger" role="alert">
+         <%= errorMessage %>
+      </div>
+    <%}%>
+    <input type="hidden" class="form-control" id="id" name="id" value="<%= project.id %>" >
+    <div class="mb-3">
+        <label for="name" class="form-label">Title</label>
+        <input type="text" class="form-control" id="name" name="name" value="<%= project.name %>">
+    </div>
+    <div class="mb-3">
+        <label for="desc" class="form-label">Description</label>
+        <textarea class="form-control" id="desc" name="desc" rows="3" value="<%= project.desc %>" ></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="author" class="form-label">Author</label>
+        <input type="text" class="form-control" id="author" name="author" value="<%= project.author%>" >
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date" name="date" value="<%= project.date%>" >
+    </div>
+    <button type="submit" class="btn btn-primary">Update Project</button>
+</form>

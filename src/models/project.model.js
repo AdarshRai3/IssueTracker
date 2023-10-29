@@ -7,11 +7,13 @@ export default class ProjectModel {
     this.date=date;
   }
 
-// function to get all the existing project in database
- static get(){
+ // function to get all the existing project in database
+  static get(){
     return projects;
   }
- static add(projectObj){
+ 
+ // function to add project in the existing database
+  static add(projectObj){
     let newProject = new ProjectModel(
       projects.length+1, 
       projectObj.name, 
@@ -20,11 +22,31 @@ export default class ProjectModel {
       projectObj.date
   );   
   projects.push(newProject)
-}
+ }
+ 
+ // function to fetch the product by its id and change data 
+ static getById(id) {
+  return projects.find((p) => p.id == id);
+ }
+ 
+ // function to update the data and put back in the list
+ static update(projectObj) {
+  const index = projects.findIndex(
+    (p) => p.id == projectObj.id
+  );
+  projects[index] = projectObj;
+ }
+
+ // function to delete the project
+ static delete(id){
+  const index = projects.findIndex(
+    (p) => p.id == id
+  );
+  projects.splice(index,1);
+ }
 }
 
-
-var projects =[
+var projects =[ 
     new ProjectModel(
         1,
         "testname1",
