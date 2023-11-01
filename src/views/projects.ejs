@@ -22,6 +22,8 @@
              <a href="/update-project/<%= project.id %>" class ="btn btn-warning"> Update </a>
              <button class="btn btn-danger" onclick="deleteProject('<%= project.id %>')"> Delete</button>
              <!-- <a href="/delete-project/<%= project.id %>" class ="btn btn-danger">  Delete </a>  -->
+             <a href="/issue/<%= project.id %>" class="btn btn-info">Track Issues</a>
+             <a href="/add-issue/<%=project.id %>" class="btn btn-success">Create Issues</a>
             </td>              
         </tr>
     <% }) %>           

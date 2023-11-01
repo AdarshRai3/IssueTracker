@@ -1,0 +1,32 @@
+
+<h1 class="mt-5 mb-4">Issues</h1>
+<table class="table table-dark">
+    <thead>
+            <tr>
+                <th scope="col">Issue ID</th>
+                <th scope="col">Issue Name</th>
+                <th scope="col">Severity</th>
+                <th scope="col">Reporter</th>
+                <th scope="col">Assignee</th>
+                <th scope="col">Created</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+    </thead>
+     <tbody>
+    <% issues.forEach(issue=>{ %>
+        <tr>
+            <th><%= issue.issueid %></th>
+            <td><%= issue.name %></td>
+            <td><%= issue.severity %> </td>
+            <td><%= issue.reporter%></td>
+            <td><%= issue.assignee%></td>   
+            <td><%= issue.date%></td>
+            <td><%= issue.status%></td>
+            <td>
+            
+            </td>              
+        </tr>
+    <% }) %>           
+    </tbody>
+</table>
