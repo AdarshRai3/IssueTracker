@@ -11,10 +11,10 @@ export default class IssueModel{
         this.status = status;
         this.projectid = projectid;
     }
-    static get(){
+     static get(){
         return issues;
       }
-    static add(issueObj){
+     static add(issueObj){
         let newIssue = new IssueModel(
           issues.length+1, 
           issueObj.name, 
@@ -27,7 +27,31 @@ export default class IssueModel{
       );   
        issues.push(newIssue)
      }  
+     static getByIssueId(issueid) {
+        return issues.find((i) => i.issueid == issueid);
+     }
+       
+       // function to update the data and put back in the list
+       static updateIssue(issueObj) 
+       {
+         const index = issues.findIndex(
+          (i) => i.issueid == issueObj.issueid
+         );
+         issues[index] = issueObj;
+         console.log(issueObj);
+         console.log(index);
+         console.log("the current issue has been updated")
+       }
+       // function to delete the project
+       static deleteIssue(issueid)
+       {
+          const index = issues.findIndex(
+          (i) => i.issueid == issueid
+         );
+         issues.splice(index,1);
+       }
 }
+
 var issues =[ 
     new IssueModel(
         1,

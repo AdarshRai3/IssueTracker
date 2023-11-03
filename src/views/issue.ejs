@@ -24,8 +24,10 @@
             <td><%= issue.date%></td>
             <td><%= issue.status%></td>
             <td>
-            
-            </td>              
+                <a href="/update-issue/<%= issue.issueid %>" class ="btn btn-warning"> Update </a>
+                <a href="/delete-issue/<%= issue.issueid %>" class ="btn btn-danger">  Delete </a>   
+            </td>     
+                   
         </tr>
     <% }) %>           
     </tbody>

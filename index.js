@@ -58,6 +58,17 @@ app.get("/add-issue/:id", issueController.getIssueForm);
 
 app.post("/issue/:id", issueController.addNewIssue);
 
+app.get("/update-issue/:issueid", issueController.getUpdateIssue)
+
+app.post(
+  "/update-issue/:issueid", 
+  issueController.postUpdateIssue
+);
+
+app.get("/delete-issue/:issueid", 
+issueController.deleteIssue
+);
+
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });

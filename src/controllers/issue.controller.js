@@ -73,4 +73,40 @@ export default class IssueController{
     IssueModel.add(newIssue)
     res.redirect(`/issue/${req.params.id}`)
   }
+
+  getUpdateIssue(req,res){
+    const issueid = req.params.issueid;
+    const issueFound = IssueModel.getByIssueId(issueid);
+    if (issueFound) {
+      res.render('update-issue', {
+        issueid:issueid,
+        issue: issueFound,
+        errorMessage: null,
+      });
+    }
+    // 2. else return errors.
+    else {
+      res.status(401).send('Issue not found');
+    }
+  }
+
+
+  postUpdateIssue(req, res) {
+    console.log(req.body);
+    IssueModel.updateIssue(req.body);
+    const issues = IssueModel.get();
+    console.log(issues);
+    res.render("issue", { issues });
+  }
+  deleteIssue(req, res){
+    const issueid = req.params.issueid;
+    const issueFound = IssueModel.getByIssueId(issueid);
+    console.log(issueid)
+      if (!issueFound){
+        return res.status(401).send('Issue not found');
+    }
+    IssueModel.deleteIssue(issueid);
+    var issues = IssueModel.get();
+    res.render("issue", { issues });
+  }
 }

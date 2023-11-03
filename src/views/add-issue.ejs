@@ -1,6 +1,6 @@
 <h1 class="mt-5 mb-4">Create New Issue</h1>
 <!-- this form is submitting on / url and the method of the form is post -->
-<form action="/issue/<%=id %>" method="post">
+<form action="/issue/<%=id %>" method="post" enctype="multipart/form-data">
    <!-- <% if(errorMessage){%>
     <div class="alert alert-danger" role="alert">
          <%= errorMessage %>
@@ -30,5 +30,6 @@
         <label for="status" class="form-label">Status</label>
         <input type="text" class="form-control" id="status" name="status" ></input>
     </div>
+
     <button type="submit" class="btn btn-primary">Create Issue</button>
 </form>

@@ -1,0 +1,36 @@
+<h1 class="mt-5 mb-4">Update Issue</h1>
+<!-- this form is submitting on / url and the method of the form is post -->
+<form action="/update-issue/<%=issue.issueid%>" method="post" >
+   <!-- <% if(errorMessage){%>
+    <div class="alert alert-danger" role="alert">
+         <%= errorMessage %>
+      </div>
+    <%}%> -->
+    <input type="hidden" class="form-control" id="issueid" name="issueid" value="<%= issue.issueid %>" >
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="<%= issue.name %>">
+    </div>
+    <div class="mb-3">
+        <label for="severity" class="form-label">Severity</label>
+        <input type="" class="form-control" id="severity" name="severity" value="<%= issue.severity %>" ></input>
+    </div>
+    <div class="mb-3">
+        <label for="reporter" class="form-label">Reporter</label>
+        <input type="text" class="form-control" id="reporter" name="reporter" value="<%= issue.reporter%>" >
+    </div>
+    <div class="mb-3">
+        <label for="assignee" class="form-label">Assignee</label>
+        <input type="text" class="form-control" id="assignee" name="assignee" value="<%= issue.assignee%>">
+    </div>
+    <div class="mb-3">
+        <label for="date" class="form-label">Created</label>
+        <input type="date" class="form-control" id="date" name="date" value="<%= issue.date%>">
+    </div>
+    <div class="mb-3">
+        <label for="status" class="form-label">Status</label>
+        <input type="text" class="form-control" id="status" name="status" value="<%= issue.status%>"></input>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Issue</button>
+</form>
