@@ -1,9 +1,10 @@
 
 export default class IssueModel{
-    constructor (issueid, name ,severity, reporter,assignee,date,status,projectid){
+    constructor (issueid, name ,description,severity, reporter,assignee,date,status,projectid){
        
         this.issueid = issueid;
         this.name = name;
+        this.description=description;
         this.severity = severity;
         this.reporter = reporter;
         this.assignee = assignee;
@@ -18,6 +19,7 @@ export default class IssueModel{
         let newIssue = new IssueModel(
           issues.length+1, 
           issueObj.name, 
+          issueObj.description,
           issueObj.severity, 
           issueObj.reporter, 
           issueObj.assignee,
@@ -53,15 +55,16 @@ export default class IssueModel{
 }
 
 var issues =[ 
-    new IssueModel(
-        1,
-        "form is showing wrong error",
-        "Medium",
-        "Rugved Hawale",
-        "Adarsh Rai",
-        "2020-10-20",
-        "Currently working",
-        1
-    ),
-   
+  new IssueModel(
+    1,
+    "Incorrect Inventory Count",
+    "The system is not updating the inventory count correctly after a sale. This happens intermittently and seems to occur more frequently when multiple sales are processed simultaneously",
+    "High",
+    "John Doe",
+    "Inventory Management Team",
+    "2023-02-01",
+    "Open",
+    1
+)
+
 ]

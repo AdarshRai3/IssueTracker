@@ -47,18 +47,33 @@ export default class ProjectModel {
 }
 
 var projects =[ 
-    new ProjectModel(
-        1,
-        "testname1",
-        "testdesc1",
-        "testauthor",
-        "2023-2-2"
-    ),
-    new ProjectModel(
-        2,
-        "testname2",
-        "testdesc2",
-        "testauthor",
-        "2023-2-2"
-    )
+  new ProjectModel(
+    1,
+    "Inventory Management System",
+    "A system to manage inventory for a retail store, including features for tracking stock levels and sales.",
+    "John Doe",
+    "2023-01-01"
+),
+new ProjectModel(
+    2,
+    "Online Learning Platform",
+    "A platform that provides online learning resources and courses for various subjects.",
+    "Jane Smith",
+    "2023-02-02"
+),
+new ProjectModel(
+    3,
+    "Weather Forecasting App",
+    "An application that provides accurate weather forecasts for different locations worldwide.",
+    "Alice Johnson",
+    "2023-03-03"
+),
+new ProjectModel(
+    4,
+    "Fitness Tracker",
+    "An app that helps users track their fitness activities and health data.",
+    "Bob Williams",
+    "2023-04-04"
+)
+
 ]

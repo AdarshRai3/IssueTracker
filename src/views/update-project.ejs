@@ -1,29 +1,31 @@
-<!-- views/add-product.ejs -->
-
-<h1 class="mt-5 mb-4 header">Update the Project</h1>
-<!-- this form is submitting on / url and the method of the form is post -->
-<form action="/update-project" method="post">
-   <% if(errorMessage){%>
-    <div class="alert alert-danger" role="alert">
-         <%= errorMessage %>
-      </div>
-    <%}%>
-    <input type="hidden" class="form-control" id="id" name="id" value="<%= project.id %>" >
-    <div class="mb-3">
-        <label for="name" class="form-label">Title</label>
-        <input type="text" class="form-control" id="name" name="name" value="<%= project.name %>">
+<div class="card" style="width:60%;margin:auto;background-color:rgb(81, 80, 82);border-radius: 1rem;">
+    <div class="card-body">
+        <h1 class="mt-5 mb-4 header">Update the Project</h1>
+        <!-- this form is submitting on / url and the method of the form is post -->
+        <form action="/update-project" method="post">
+            <% if(errorMessage){%>
+            <div class="alert alert-danger" role="alert">
+                <%= errorMessage %>
+            </div>
+            <%}%>
+            <input type="hidden" class="form-control" id="id" name="id" value="<%= project.id %>" >
+            <div class="mb-3 d-flex">
+                <label for="name" class="form-label"><strong>Title</strong></label>
+                <input type="text" class="form-control" id="name" name="name" value="<%= project.name %>" style="margin-left:1rem">
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label"><strong>Description</strong></label>
+                <textarea class="form-control" id="desc" name="desc" rows="3" ><%= project.desc %></textarea>
+            </div>
+            <div class="mb-3 d-flex">
+                <label for="author" class="form-label"><strong>Author</strong></label>
+                <input type="text" class="form-control" id="author" name="author" value="<%= project.author%>" style="margin-left:1rem">
+            </div>
+            <div class="mb-3 d-flex">
+                <label for="date" class="form-label"><strong>Date</strong></label> 
+                <input type="date" class="form-control" id="date" name="date" value="<%= project.date%>" style="margin-left:1rem">
+            </div>
+            <button type="submit" class="btn btn-primary"><strong>Update Project</strong></button>
+        </form>
     </div>
-    <div class="mb-3">
-        <label for="desc" class="form-label">Description</label>
-        <textarea class="form-control" id="desc" name="desc" rows="3" ><%= project.desc %></textarea>
-    </div>
-    <div class="mb-3">
-        <label for="author" class="form-label">Author</label>
-        <input type="text" class="form-control" id="author" name="author" value="<%= project.author%>" >
-    </div>
-    <div class="mb-3">
-        <label for="date" class="form-label">Date</label>
-        <input type="date" class="form-control" id="date" name="date" value="<%= project.date%>" >
-    </div>
-    <button type="submit" class="btn btn-primary">Update Project</button>
-</form>
+</div>

@@ -1,31 +1,24 @@
 <h1 class="mt-5 mb-4 header">Projects</h1>
-<table class="table table-dark">
-    <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Actions</th>
-                </tr>
-    </thead>
-    <tbody>
+<div class="card-columns">
     <% projects.forEach(project=>{ %>
-        <tr>
-            <th><%= project.id %></th>
-            <td><%= project.name %></td>
-            <td><%= project.desc %> </td>
-            <td><%= project.author%></td>
-            <td><%= project.date%></td>   
-            <td>
-             <a href="/update-project/<%= project.id %>" class ="btn btn-warning"> Update </a>
-             <button class="btn btn-danger" onclick="deleteProject('<%= project.id %>')"> Delete</button>
-             <!-- <a href="/delete-project/<%= project.id %>" class ="btn btn-danger">  Delete </a>  -->
-             <a href="/issue/<%= project.id %>" class="btn btn-info">Track Issues</a>
-             <a href="/add-issue/<%=project.id %>" class="btn btn-success">Create Issues</a>
-            </td>              
-        </tr>
-    <% }) %>           
-    </tbody>
-</table>
+        <div class="card" style="width: 80%; margin-left:auto; margin-right:auto;margin-bottom: 1rem;">
+            <div class="card-body d-flex justify-content-between">
+                <div style="padding-right: 3rem;">
+                    <h5 class="card-title"><strong>ID:</strong> <%= project.id %></h5>
+                    <p class="card-text"><strong>Title:</strong> <%= project.name %></p>
+                    <p class="card-text"><strong>Description:</strong> <%= project.desc %></p>
+                    <p class="card-text"><strong>Author:</strong> <%= project.author %></p>
+                    <p class="card-text"><strong>Date:</strong> <%= project.date %></p>
+                </div>
+                <div class="d-flex flex-column align-items-end">
+                    <a href="/update-project/<%= project.id %>" class ="btn btn-warning mb-2" style="width:8rem;color:white"> <strong>Update</strong> </a>
+                    <button class="btn btn-danger mb-2 w-100" onclick="deleteProject('<%= project.id %>')"style="width:8rem;color:white"> <strong>Delete</strong> </button>
+                    <a href="/issue/<%= project.id %>" class="btn btn-info mb-2 " style="width:8rem;color:white"><strong>Track Issues</strong> </a>
+                    <a href="/add-issue/<%=project.id %>" class="btn btn-success"style="width:8rem;color:white"><strong>Create Issues</strong> </a>
+                </div>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+

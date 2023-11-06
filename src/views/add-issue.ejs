@@ -1,35 +1,54 @@
-<h1 class="mt-5 mb-4">Create New Issue</h1>
-<!-- this form is submitting on / url and the method of the form is post -->
-<form action="/issue/<%=id %>" method="post" enctype="multipart/form-data">
-   <!-- <% if(errorMessage){%>
-    <div class="alert alert-danger" role="alert">
-         <%= errorMessage %>
-      </div>
-    <%}%> -->
-    <div class="mb-3">
-        <label for="name" class="form-label">Name</label>
-        <input type="text" class="form-control" id="name" name="name" >
+<div class="card" style="width:60%;height:auto;margin:auto;background-color:rgb(81, 80, 82);border-radius: 1rem;">
+    <div class="card-body">
+        <h1 class="mt-5 mb-4" style="text-align: center;color:white">Create New Issue</h1>
+        <!-- this form is submitting on / url and the method of the form is post -->
+        <form action="/issue/<%=id %>" method="post" enctype="multipart/form-data">
+            
+            <div class="mb-3 d-flex">
+                <label for="name" class="form-label"><strong>Name</strong></label>
+                <input type="text" class="form-control" id="name" name="name" style="margin-left:1rem">
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label"><strong>Description</strong></label>
+                <textarea class="form-control" id="desc" name="desc" rows="3" ></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="severity" class="form-label"><strong>Severity</strong></label>
+                <div class="d-flex">
+                    <input type="radio" id="low" name="severity" value="low">
+                    <label for="low" style="color:white; margin-right:2rem"><strong>Low</strong></label><br>
+                    <input type="radio" id="medium" name="severity" value="medium">
+                    <label for="medium" style="color:white; margin-right:2rem"><strong>Medium</strong></label><br>
+                    <input type="radio" id="major" name="severity" value="high">
+                    <label for="major" style="color:white; margin-right:2rem"><strong>Major </strong></label>
+                </div>
+            </div>
+            <div class="mb-3 d-flex">
+                <label for="reporter" class="form-label"><strong>Reporter</strong></label>
+                <input type="text" class="form-control" id="reporter" name="reporter" style="margin-left:1rem">
+            </div>
+            <div class="mb-3 d-flex">
+                <label for="assignee" class="form-label"><strong>Assignee</strong></label>
+                <input type="text" class="form-control" id="assignee" name="assignee" style="margin-left:1rem">
+            </div>
+            <div class="mb-3 d-flex">
+                <label for="date" class="form-label"><strong>Date</strong></label> 
+                <input type="date" class="form-control" id="date" name="date" style="margin-left:1rem">
+            </div>
+            <div class="mb-3">
+                <label for="status" class="form-label"><strong>Status</strong></label> 
+                <div class="d-flex" style="margin:auto">
+                    <input type="radio" id="open" name="status" value="open">
+                    <label for="open" style="color:white; margin-right:2rem"> <strong>Open</strong></label><br>
+                    <input type="radio" id="in-progress" name="status" value="in-progress">
+                    <label for="in-progress" style="color:white;margin-right:2rem;"><strong>In Progress </strong></label><br>
+                    <input type="radio" id="closed" name="status" value="to-be-tested">
+                    <label for="to-be-tested" style="color:white;margin-right:2rem;"><strong>To be tested </strong></label>
+                    <input type="radio" id="closed" name="status" value="closed">
+                    <label for="closed" style="color:white; margin-right:2rem"><strong>Closed</strong></label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary"><strong>Create Issue</strong></button>
+        </form>
     </div>
-    <div class="mb-3">
-        <label for="severity" class="form-label">Severity</label>
-        <input type="" class="form-control" id="severity" name="severity" ></input>
-    </div>
-    <div class="mb-3">
-        <label for="reporter" class="form-label">Reporter</label>
-        <input type="text" class="form-control" id="reporter" name="reporter" >
-    </div>
-    <div class="mb-3">
-        <label for="assignee" class="form-label">Assignee</label>
-        <input type="text" class="form-control" id="assignee" name="assignee" >
-    </div>
-    <div class="mb-3">
-        <label for="date" class="form-label">Created</label>
-        <input type="date" class="form-control" id="date" name="date" >
-    </div>
-    <div class="mb-3">
-        <label for="status" class="form-label">Status</label>
-        <input type="text" class="form-control" id="status" name="status" ></input>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Create Issue</button>
-</form>
+</div>
