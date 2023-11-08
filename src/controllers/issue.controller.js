@@ -66,6 +66,7 @@ export default class IssueController{
     const newIssue={
         issueid:issues.length+1,
         name:req.body.name,
+        desc: req.body.desc,
         severity: req.body.severity,
         reporter: req.body.reporter,
         assignee:req.body.assignee,
