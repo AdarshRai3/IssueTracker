@@ -75,7 +75,7 @@ export default class IssueController{
         userEmail: req.session.userEmail,
         
     }
-
+    console.log(newIssue)
     IssueModel.add(newIssue)
     res.redirect(`/issue/${req.params.id}`)
   }

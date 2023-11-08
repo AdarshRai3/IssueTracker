@@ -2,7 +2,7 @@
     <div class="card-body">
         <h1 class="mt-5 mb-4" style="text-align: center;color:white">Create New Issue</h1>
         <!-- this form is submitting on / url and the method of the form is post -->
-        <form action="/issue/<%=id %>" method="post" enctype="multipart/form-data">
+        <form action="/issue/<%=id %>" method="post">
             
             <div class="mb-3 d-flex">
                 <label for="name" class="form-label"><strong>Name</strong></label>
@@ -39,13 +39,13 @@
                 <label for="status" class="form-label"><strong>Status</strong></label> 
                 <div class="d-flex" style="margin:auto">
                     <input type="radio" id="open" name="status" value="open">
-                    <label for="open" style="color:white; margin-right:2rem"> <strong>Open</strong></label><br>
+                    <label for="Open" style="color:white; margin-right:2rem"> <strong>Open</strong></label><br>
                     <input type="radio" id="in-progress" name="status" value="in-progress">
-                    <label for="in-progress" style="color:white;margin-right:2rem;"><strong>In Progress </strong></label><br>
+                    <label for="In-progress" style="color:white;margin-right:2rem;"><strong>In Progress </strong></label><br>
                     <input type="radio" id="closed" name="status" value="to-be-tested">
-                    <label for="to-be-tested" style="color:white;margin-right:2rem;"><strong>To be tested </strong></label>
+                    <label for="To-be-tested" style="color:white;margin-right:2rem;"><strong>To be tested </strong></label>
                     <input type="radio" id="closed" name="status" value="closed">
-                    <label for="closed" style="color:white; margin-right:2rem"><strong>Closed</strong></label>
+                    <label for="Closed" style="color:white; margin-right:2rem"><strong>Closed</strong></label>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary"><strong>Create Issue</strong></button>

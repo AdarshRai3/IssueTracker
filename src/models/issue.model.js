@@ -1,10 +1,10 @@
 
 export default class IssueModel{
-    constructor (issueid, name ,description,severity, reporter,assignee,date,status,projectid){
+    constructor (issueid, name ,desc,severity, reporter,assignee,date,status,projectid){
        
         this.issueid = issueid;
         this.name = name;
-        this.description=description;
+        this.desc=desc;
         this.severity = severity;
         this.reporter = reporter;
         this.assignee = assignee;
@@ -19,7 +19,7 @@ export default class IssueModel{
         let newIssue = new IssueModel(
           issues.length+1, 
           issueObj.name, 
-          issueObj.description,
+          issueObj.desc,
           issueObj.severity, 
           issueObj.reporter, 
           issueObj.assignee,
