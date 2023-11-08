@@ -1,7 +1,7 @@
 <h1 class="mt-5 mb-4 header">Projects</h1>
 <div class="card-columns">
     <% projects.forEach(project=>{ %>
-        <div class="card" style="width: 80%; color:white;background-color:rgb(39, 38, 41) ; margin-left:auto; margin-right:auto;margin-bottom: 1rem;">
+        <div class="card" style="width: 70%; color:white;background-color:rgb(39, 38, 41) ; margin-left:auto; margin-right:auto;margin-bottom: 1rem;">
             <div class="card-body d-flex justify-content-between">
                 <div style="padding-right: 3rem;">
                     <h5 class="card-title"><strong>ID:</strong> <%= project.id %></h5>
@@ -12,7 +12,7 @@
                 </div>
                 <div class="d-flex flex-column align-items-end">
                     <a href="/update-project/<%= project.id %>" class ="btn btn-warning mb-2" style="width:8rem;color:white"> <strong>Update</strong> </a>
-                    <button class="btn btn-danger mb-2 w-100" onclick="deleteProject('<%= project.id %>')"style="width:8rem;color:white"> <strong>Delete</strong> </button>
+                    <a href="/delete-project/<%= project.id %>" class ="btn btn-danger mb-2" style="width:8rem;color:white"> <strong>Delete</strong> </a>
                     <a href="/issue/<%= project.id %>" class="btn btn-info mb-2 " style="width:8rem;color:white"><strong>Track Issues</strong> </a>
                     <a href="/add-issue/<%=project.id %>" class="btn btn-success"style="width:8rem;color:white"><strong>Create Issues</strong> </a>
                 </div>

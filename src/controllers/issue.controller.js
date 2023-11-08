@@ -24,8 +24,10 @@ export default class IssueController{
       if (projectFound) {
         res.render('issue', {
         project: projectFound,
+        userEmail: req.session.userEmail,
+        issues:issues,
         errorMessage: null,
-        issues:issues
+        
       });
     }
         // 2. else return errors.
@@ -43,9 +45,11 @@ export default class IssueController{
         if (projectFound) {
           res.render('add-issue', {
             // project: projectFound,
-            errorMessage: null,
+           
+            userEmail: req.session.userEmail,
             issues:issues,
-            id:id
+            id:id,
+            errorMessage: null
           });
         }
         // 2. else return errors.
@@ -67,7 +71,9 @@ export default class IssueController{
         assignee:req.body.assignee,
         date:req.body.date,
         status:req.body.status,
-        projectid:req.params.id
+        projectid:req.params.id,
+        userEmail: req.session.userEmail,
+        
     }
 
     IssueModel.add(newIssue)
@@ -81,6 +87,7 @@ export default class IssueController{
       res.render('update-issue', {
         issueid:issueid,
         issue: issueFound,
+        userEmail: req.session.userEmail,
         errorMessage: null,
       });
     }
@@ -96,7 +103,7 @@ export default class IssueController{
     IssueModel.updateIssue(req.body);
     const issues = IssueModel.get();
     console.log(issues);
-    res.render("issue", { issues });
+    res.render("issue", { issues, userEmail: req.session.userEmail});
   }
   deleteIssue(req, res){
     const issueid = req.params.issueid;
@@ -107,6 +114,6 @@ export default class IssueController{
     }
     IssueModel.deleteIssue(issueid);
     var issues = IssueModel.get();
-    res.render("issue", { issues });
+    res.render("issue", { issues,userEmail: req.session.userEmail });
   }
 }

@@ -7,11 +7,12 @@ export default class ProjectController{
     getProjects(req,res) {
         let projects = ProjectModel.get()
         // view engine will send us here and from here we control the specic page we want to render from views folder
-        res.render("projects", {projects:projects})
+        res.render("projects", {projects:projects,userEmail: req.session.userEmail})
     }
     //method to add project in the form
     getAddForm(req,res) {
        return res.render('new-project',{
+        userEmail: req.session.userEmail,
         errorMessage: null,
     })
     }
@@ -23,7 +24,7 @@ export default class ProjectController{
        console.log(req.body)
        let projects = ProjectModel.get()
        ProjectModel.add(req.body)
-       res.render("projects",{projects:projects})
+       res.render("projects",{projects:projects,userEmail: req.session.userEmail})
    }
 
       //method to update product view 
@@ -34,6 +35,7 @@ export default class ProjectController{
         if (projectFound) {
           res.render('update-project', {
             project: projectFound,
+            userEmail: req.session.userEmail,
             errorMessage: null,
           });
         }
@@ -46,7 +48,7 @@ export default class ProjectController{
      postUpdateProject(req, res) {
         ProjectModel.update(req.body);
         var projects = ProjectModel.get();
-        res.render('projects', { projects });
+        res.render('projects', { projects,userEmail: req.session.userEmail});
     }
     // method to delete the project in the list
     deleteProject(req, res){
@@ -57,6 +59,6 @@ export default class ProjectController{
         }
         ProjectModel.delete(id);
         var projects = ProjectModel.get();
-        res.render('projects', { projects });
+        res.render('projects', { projects,userEmail: req.session.userEmail });
     }
 }

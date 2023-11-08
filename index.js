@@ -65,7 +65,7 @@ app.get("/update-project/:id", auth , projectController.getUpdateProjectView);
 app.post("/update-project/", auth , projectController.postUpdateProject);
 
 // this will delete the project
-app.post("/delete-project/:id", auth , projectController.deleteProject);
+app.get("/delete-project/:id", auth , projectController.deleteProject);
 
 // these are functionalities of issue.ejs page
 // this will post the issue for the project
